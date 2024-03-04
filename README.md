@@ -1,7 +1,4 @@
-# ALMFnet
-ALMFnet
-
-# Introduction
+# ALMFnet Introduction
 
 This is the implementation of the paper [Learning to Search a Lightweight Generalized Network for Medical Image Fusion](https://ieeexplore.ieee.org/abstract/document/10360160/) (IEEE TCSVT).
 
