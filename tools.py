@@ -38,7 +38,34 @@ def Get_color(save_dir, type):
         save_name = Save_dir + name + '.png'
         print(save_name)
         cv2.imwrite(save_name, F_fin)
-    
+
+INIT_TIMES = 100
+LAT_TIMES = 1000
+
+def measure_latency_in_ms(model, input_shape, is_cuda):
+    lat = AverageMeter()
+    model.eval()
+
+    x = torch.randn(input_shape)
+    if is_cuda:
+        model = model.cuda()
+        x = x.cuda()
+    else:
+        model = model.cpu()
+        x = x.cpu()
+
+    with torch.no_grad():
+        for _ in range(INIT_TIMES):
+            output = model(x)
+
+        for _ in range(LAT_TIMES):
+            tic = time.time()
+            output = model(x)
+            toc = time.time()
+            lat.update(toc - tic, x.size(0))
+
+    return lat.avg * 1000  # save as ms
+
 def data_augmentation(image, mode):
     '''
     Performs dat augmentation of the input image
