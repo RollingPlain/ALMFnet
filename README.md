@@ -1,6 +1,7 @@
 # ALMFnet Introduction
 
 This is the implementation of the paper [Learning to Search a Lightweight Generalized Network for Medical Image Fusion](https://ieeexplore.ieee.org/abstract/document/10360160/) (IEEE TCSVT).
+Our generalized model supports the fusion of medical images combining MRI with PET/CT/SPECT modalities.
 
 ## Requirements
 
@@ -26,7 +27,7 @@ python train_search_lat.py
 
 ### step 2
 
-Find the string which descripting the searched architectures in the log file. Copy and paste it into the genotypes.py, the format should consist with the primary architecture string.
+Find the string that describes the searched architectures by using the trained model. Copy and paste it into the genotypes.py, the format should consist of the primary architecture string.
 
 ### step 3
 
@@ -49,4 +50,4 @@ If you use any part of this code in your research, please cite our paper:
 ```
 ## Any Question
 
-If you have any questions about the code, please feel free to raise them in [Issues](https://github.com/RollingPlain/ALMFnet/issues) or email [Guanyao Wu](rollingplainko@gmail.com).
+If you have any questions or concerns regarding the code, please feel free to raise them in [Issues](https://github.com/RollingPlain/ALMFnet/issues) or email [Guanyao Wu](rollingplainko@gmail.com).
